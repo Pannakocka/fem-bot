@@ -19,35 +19,20 @@ pprint(list_data[0]['feminitive1'])
 
 
 def tweet():
-    index = randint(0, 234)
-    for index, nouns in enumerate(list_data, index):
+    #for index, nouns in enumerate(list_data, index):
+    while(True):
+        index = index.seed()
+        index = index.randint(0, 234)
         nouns = list_data[index]['feminitive1'] + " – фемінітив до слова " + list_data[index]['masculinitive1']
         try:
             print(nouns.capitalize())
             if nouns != '\n':
-                 api.update_status(nouns.capitalize())
-                 sleep(900)
+                api.update_status(nouns.capitalize())
+                sleep(900)
             else:
-                 pass
+                pass
         except tweepy.TweepError as e:
             print(e.reason)
-            sleep(85000)
+            sleep(10)
 
 tweet()
-
-
-# # Read lines one by one from my_file and assign to file_lines variable
-# file_lines = data_file.readlines()
-
-# my_file=open('verne.txt','r')
-# file_lines=my_file.readlines()
-# my_file.close()
-
-# for line in list_data:
-#     print(line[0]['masculinitive1'])
-#     api.update_status(line)
-
-# # Create a for loop to iterate over file_lines
-# for line in file_lines:
-#     print(line)
-#     api.update_status(line)
