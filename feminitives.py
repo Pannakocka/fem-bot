@@ -1,7 +1,7 @@
 import tweepy
 from time import sleep
 import json
-from random import randint
+from random import randint, seed
 from pprint import pprint
 from credentials import *
 
@@ -20,9 +20,10 @@ pprint(list_data[0]['feminitive1'])
 
 def tweet():
     #for index, nouns in enumerate(list_data, index):
+    index = 0
     while(True):
-        index = index.seed()
-        index = index.randint(0, 234)
+        index = seed()
+        index = randint(0, 234)
         nouns = list_data[index]['feminitive1'] + " – фемінітив до слова " + list_data[index]['masculinitive1']
         try:
             print(nouns.capitalize())
