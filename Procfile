@@ -1,1 +1,1 @@
-worker: feminitives.py
+worker: python feminitives.py
