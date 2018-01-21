@@ -5,12 +5,12 @@ from random import randint, seed
 from pprint import pprint
 from credentials import *
 
-# Access and authorize our Twitter credentials from credentials.py
+# Access and authorize Twitter credentials from credentials.py
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
-with open('nouns.json') as data_file:
+with open('nouns-censored.json') as data_file:
     list_data = json.load(data_file)
 
 # pprint(data)
